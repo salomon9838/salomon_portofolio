@@ -1,0 +1,157 @@
+/* ======= Style global ======= */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: white;
+    color: #222;
+    scroll-behavior: smooth;
+}
+
+/* ======= Navigation ======= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: grey;
+    color: white;
+}
+
+.logo {
+    font-size: 1.6em;
+    color: #00bcd4;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #00bcd4;
+}
+
+/* ======= Section accueil ======= */
+.accueil {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 80px 10%;
+    flex-wrap: wrap;
+}
+
+.accueil .texte {
+    max-width: 500px;
+}
+
+.accueil h1 {
+    font-size: 2.3em;
+}
+
+.accueil span {
+    color: #00bcd4;
+}
+
+.accueil .btn {
+    background: #00bcd4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.accueil .btn:hover {
+    background: #0097a7;
+}
+
+.btn.secondaire {
+    background: transparent;
+    border: 2px solid #00bcd4;
+    color: #00bcd4;
+}
+
+.btn.secondaire:hover {
+    background: #00bcd4;
+    color: white;
+}
+
+.image img {
+    width: 250px;
+    border-radius: 50%;
+    border: 4px solid #00bcd4;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* ======= Section à propos ======= */
+.apropos, .competences, .projets, .contact {
+    padding: 60px 10%;
+    text-align: center;
+}
+
+.apropos h2, .competences h2, .projets h2, .contact h2 {
+    color: #00bcd4;
+    margin-bottom: 20px;
+}
+
+/* ======= Compétences ======= */
+.competences ul {
+    list-style: none;
+    padding: 0;
+    background-color: blue;
+}
+
+.competences li {
+    background: white;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 10px;
+    width: 70%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ======= Projets ======= */
+.projets-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.projet {
+    background:blue;
+    color: white;
+    padding: 20px;
+    width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.projet:hover {
+    transform: scale(1.05);
+}
+
+/* ======= Contact ======= */
+.contact a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 50px;
+}
