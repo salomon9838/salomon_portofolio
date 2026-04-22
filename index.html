@@ -1,88 +1,407 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio de Salomon Fiagan Yao</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Portfolio | Salomon Fiagan Yao</title>
+
+<style>
+/* ===========================
+   RESET
+=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#f4f8ff,#eef7ff,#ffffff);
+    color:#111;
+    line-height:1.6;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:999;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(10px);
+    padding:18px 8%;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#00d9ff;
+}
+
+.menu{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:#fff;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:#00d9ff;
+}
+
+/* ===========================
+   SECTION GENERALE
+=========================== */
+section{
+    padding:110px 8% 80px;
+}
+
+h2.section-title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:50px;
+    color:#00bcd4;
+}
+
+/* ===========================
+   HERO
+=========================== */
+.accueil{
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:50px;
+}
+
+.accueil h1{
+    font-size:55px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.accueil h1 span{
+    color:#00bcd4;
+}
+
+.accueil h3{
+    font-size:28px;
+    margin-bottom:20px;
+}
+
+.accueil p{
+    font-size:19px;
+    color:#444;
+    margin-bottom:30px;
+}
+
+.btns{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:40px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.primary{
+    background:#00bcd4;
+    color:#fff;
+    box-shadow:0 10px 25px rgba(0,188,212,.3);
+}
+
+.primary:hover{
+    transform:translateY(-4px);
+}
+
+.secondary{
+    border:2px solid #00bcd4;
+    color:#00bcd4;
+}
+
+.secondary:hover{
+    background:#00bcd4;
+    color:#fff;
+}
+
+.hero-img{
+    text-align:center;
+}
+
+.hero-img img{
+    width:340px;
+    height:340px;
+    border-radius:50%;
+    object-fit:cover;
+    border:7px solid #00d9ff;
+    box-shadow:0 0 30px rgba(0,217,255,.35);
+}
+
+/* ===========================
+   CARDS
+=========================== */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#fff;
+    border-radius:20px;
+    padding:28px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#00bcd4;
+    margin-bottom:15px;
+}
+
+/* ===========================
+   ABOUT
+=========================== */
+.about{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+    font-size:20px;
+}
+
+/* ===========================
+   SKILLS
+=========================== */
+.skills ul{
+    list-style:none;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:20px;
+}
+
+.skills li{
+    background:#fff;
+    padding:18px;
+    border-radius:15px;
+    box-shadow:0 8px 18px rgba(0,0,0,.06);
+    font-weight:600;
+}
+
+/* ===========================
+   CONTACT
+=========================== */
+.contact-box{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+}
+
+.contact-box p{
+    margin:18px 0;
+    font-size:20px;
+}
+
+.contact-box a{
+    text-decoration:none;
+    color:#00bcd4;
+    font-weight:bold;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer{
+    background:#000;
+    color:#fff;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media(max-width:950px){
+
+.accueil{
+    grid-template-columns:1fr;
+    text-align:center;
+}
+
+.menu{
+    display:none;
+}
+
+.accueil h1{
+    font-size:42px;
+}
+
+.hero-img img{
+    width:280px;
+    height:280px;
+}
+
+.btns{
+    justify-content:center;
+}
+}
+</style>
 </head>
+
 <body>
-    <!-- ======= En-tête ======= -->
-    <header>
-        <nav class="navbar">
-            <div class="logo"><strong>Codeur.</strong></div>
-            <ul class="menu">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#apropos">À propos</a></li>
-                <li><a href="#competences">Compétences</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <!-- ======= Section Accueil ======= -->
-    <section id="accueil" class="accueil">
-        <div class="texte">
-            <h1>Salut, je suis <span>Salomon Fiagan Yao</span></h1>
-            <h2>Développeur d’application & passionné de technologie 💻</h2>
-            <p>Motivé, créatif et toujours en quête d’innovation.</p>
-            <div class="boutons">
-                <a href="Cv.pdf" class="btn">Télécharger CV</a>
-                <a href="#contact" class="btn secondaire">Me Contacter</a>
-            </div>
-        </div>
-        <div class="image">
-            <img src="s.png" alt="Photo de profil de Salomon">
-        </div>
-    </section>
+<!-- HEADER -->
+<header>
+<nav class="navbar">
+<div class="logo">Codeur.</div>
 
-    <!-- ======= Section À propos ======= -->
-    <section id="apropos" class="apropos">
-        <h2>À propos de moi</h2>
-        <p><strong>
-            Je suis un développeur passionné par la création d’applications et de sites web performants. 
-            J’aime transformer des idées en projets concrets tout en améliorant mes compétences chaque jour.</strong>
-        </p>
-    </section>
+<ul class="menu">
+<li><a href="#accueil">Accueil</a></li>
+<li><a href="#apropos">À propos</a></li>
+<li><a href="#competences">Compétences</a></li>
+<li><a href="#projets">Projets</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</header>
 
-    <!-- ======= Section Compétences ======= -->
-    <section id="competences" class="competences">
-        <h2>Mes compétences</h2>
-        <ul>
-            <li>💡 HTML, CSS, JavaScript</li>
-            <li>🖥️ Maintenance Informatique</li>
-            <li>🗄️ Bases de Données (MySQL)</li>
-            <li>🌐 Réseaux Informatiques</li>
-            <li>👨‍💻 Programmation et développement d’applications</li>
-        </ul>
-    </section>
+<!-- HERO -->
+<section class="accueil" id="accueil">
 
-    <!-- ======= Section Projets ======= -->
-    <section id="projets" class="projets">
-        <h2>Mes projets</h2>
-        <div class="projets-grid">
-            <div class="projet">
-                <h3>🌆 Site de Villes</h3>
-                <p>Un site web interactif présentant différentes villes avec leurs informations et attraits touristiques.</p>
-            </div>
-            <div class="projet">
-                <h3>💰 Application de Tontine</h3>
-                <p>Une application pour gérer les tontines et les contributions des membres.</p>
-            </div>
-        </div>
-    </section>
+<div>
+<h1>Salut, je suis <span>Salomon Fiagan Yao</span></h1>
 
-    <!-- ======= Section Contact ======= -->
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <p><strong>📞 WhatsApp :</strong> <a href="https://wa.me/22892627449">+228 92 62 74 49</a></p>
-        <p><strong>📧 Email :</strong> <a href="mailto:Salomonkoumedjina@gmail.com">Salomonkoumedjina@gmail.com</a></p>
-        <p><strong>💼 LinkedIn :</strong> <a href="https://www.linkedin.com/in/koumedjina-ing%C3%A9nieur-en-application-376b5a343" target="_blank">Mon profil LinkedIn</a></p>
-    </section>
+<h3>Développeur Web & Applications Modernes 💻</h3>
 
-    <footer>
-        <p>© 2025 Salomon Fiagan Yao — Tous droits réservés.</p>
-    </footer>
+<p>
+Créatif, motivé et passionné par les solutions digitales performantes.
+Je transforme les idées en projets concrets et professionnels.
+</p>
+
+<div class="btns">
+<a href="Cv.pdf" class="btn primary">Télécharger CV</a>
+<a href="#contact" class="btn secondary">Me Contacter</a>
+</div>
+</div>
+
+<div class="hero-img">
+<img src="s.jpeg" alt="Salomon">
+</div>
+
+</section>
+
+<!-- ABOUT -->
+<section id="apropos">
+<h2 class="section-title">À propos de moi</h2>
+
+<div class="about">
+Je suis un développeur passionné par la création de sites web modernes,
+applications performantes et solutions numériques innovantes.
+J’améliore continuellement mes compétences pour offrir un travail de qualité professionnelle.
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="competences" class="skills">
+<h2 class="section-title">Mes compétences</h2>
+
+<ul>
+<li>🌐 HTML5 / CSS3 / JavaScript</li>
+<li>⚡ PHP / MySQL / SQL</li>
+<li>🧠 Langages Statistiques : SQL, React</li>
+<li>🚀 Langages Dynamiques : Java, PHP, Python</li>
+<li>📱 Développement d'applications web</li>
+<li>🖥️ Maintenance Informatique</li>
+<li>🎨 UI / UX Design moderne</li>
+</ul>
+</section>
+
+<!-- PROJECTS -->
+<section id="projets">
+<h2 class="section-title">Mes projets</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🌆 Site de Villes</h3>
+<p>
+Plateforme web présentant plusieurs villes,
+leurs informations, attractions et découvertes touristiques.
+</p>
+</div>
+
+<div class="card">
+<h3>💰 Application de Tontine</h3>
+<p>
+Application intelligente pour gérer les tontines,
+cotisations, membres et historiques de paiement.
+</p>
+</div>
+
+<div class="card">
+<h3>🛒 Vente en Ligne</h3>
+<p>
+Boutique e-commerce moderne avec produits,
+panier, commandes et paiement sécurisé.
+</p>
+</div>
+
+<div class="card">
+<h3>🏥 Consultations en Santé</h3>
+<p>
+Plateforme médicale pour prise de rendez-vous,
+consultation en ligne et suivi des patients.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+
+<div class="contact-box">
+<p>📞 WhatsApp : <a href="https://wa.me/22892627449">+228 92 62 74 49</a></p>
+
+<p>📧 Email : <a href="mailto:Salomonkoumedjina@gmail.com">Salomonkoumedjina@gmail.com</a></p>
+
+<p>💼 LinkedIn :
+<a href="https://www.linkedin.com/" target="_blank">
+Voir mon profil
+</a></p>
+</div>
+</section>
+
+<footer>
+© 2025 Salomon Fiagan Yao — Tous droits réservés.
+</footer>
+
 </body>
 </html>
